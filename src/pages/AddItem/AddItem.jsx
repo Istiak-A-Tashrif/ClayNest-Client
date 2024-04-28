@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useAuth from "../../components/Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const AddItem = () => {
   const [customizable, setCustomizable] = useState("no");
@@ -41,7 +42,26 @@ const AddItem = () => {
     const desc = form.desc.value;
     const price = form.price.value;
 
-    
+    const item  = { name, email, itemName, photo, desc, price, category, processingTime, customizable, rating, stock}
+
+    fetch('http://localhost:5000/allItems', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(item)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if(data.insertedId){
+        Swal.fire({
+          title: "Success!",
+          text: "Item added successfully",
+          icon: "success"
+        });
+      }
+    })
 
 
   }

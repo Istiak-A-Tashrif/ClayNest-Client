@@ -7,6 +7,8 @@ import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import AddItem from "../pages/AddItem/AddItem";
+import AllItems from "../pages/AllItems/AllItems";
+import DetailsPage from "../pages/DetailsPage/DetailsPage";
 
 const  Routes = createBrowserRouter([
     {
@@ -36,8 +38,18 @@ const  Routes = createBrowserRouter([
             {
                 path: "/add",
                 element: <AddItem></AddItem>
+            },
+            {
+                path: "/allItems",
+                element: <AllItems></AllItems>,
+                loader: () => fetch('http://localhost:5000/allItems')
+            },
+            {
+                path: "/item/:id",
+                element: <DetailsPage></DetailsPage>,
+                loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
             }
-        ]
+        ]        
     }
 ]);
 

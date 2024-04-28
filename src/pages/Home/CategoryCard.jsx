@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const CategoryCard = ({data}) => {
 
-    const {image, category, des} = data;
+    const {image, category, des, _id} = data;
 
   return (
     <div className="card card-side bg-base-100 shadow-xl my-4 flex-col md:flex-row">
@@ -17,7 +19,7 @@ const CategoryCard = ({data}) => {
         <h2 className="card-title">{category}</h2>
         <p>{des}</p>
         <div className="card-actions mt-2">
-          <button className="btn btn-primary">View Products</button>
+          <Link to={`/items/${_id}`}><button className="btn btn-primary">View Products</button></Link>
         </div>
       </div>
     </div>
