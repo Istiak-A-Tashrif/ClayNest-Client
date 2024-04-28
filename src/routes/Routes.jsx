@@ -4,11 +4,14 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const  Routes = createBrowserRouter([
     {
         path: "/",
         element:<App></App>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -25,7 +28,9 @@ const  Routes = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <UpdateProfile></UpdateProfile>
+                element: <PrivateRoute>
+                    <UpdateProfile></UpdateProfile>
+                </PrivateRoute>
             }
         ]
     }

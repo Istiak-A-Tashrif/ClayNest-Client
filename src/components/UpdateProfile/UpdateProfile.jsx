@@ -2,9 +2,10 @@ import { FaRegEnvelopeOpen } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { Slide, toast } from "react-toastify";
 import useAuth from "../Hooks/useAuth";
+import { useState } from "react";
 
 const UpdateProfile = () => {
-  const { user, update, notifyError } = useAuth();
+  const { user, setUser, update, notifyError } = useAuth();
 
   const {
     register,
@@ -13,7 +14,7 @@ const UpdateProfile = () => {
   } = useForm();
 
   const notify = () =>
-    toast.success("Update success!! Reload to see changes", {
+    toast.success("Update success!!", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -21,7 +22,7 @@ const UpdateProfile = () => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: "colored",
       transition: Slide,
     });
 
@@ -32,7 +33,11 @@ const UpdateProfile = () => {
     }
 
     update(name, photo)
-      .then(notify())
+      .then( () => {
+        setUser({ ...user, displayName: name, photoURL: photo });
+        notify();
+      }
+      )
       .catch((error) => {
         console.error("error", error.message);
         notifyError();
@@ -41,7 +46,7 @@ const UpdateProfile = () => {
 
   return (
     <div>
-      <div className="p-8 sm:flex flex-col">
+      <div className="p-8 sm:flex justify-center flex-col min-h-[68vh]">
         <div className="flex-shrink-0 md:w-1/2 h-64 mb-6  mx-auto bg-gray-100 rounded">
           <img
             src={user?.photoURL}
