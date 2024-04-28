@@ -9,6 +9,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import AddItem from "../pages/AddItem/AddItem";
 import AllItems from "../pages/AllItems/AllItems";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
+import CategoryItems from "../pages/CategoryItems/CategoryItems";
 
 const  Routes = createBrowserRouter([
     {
@@ -48,7 +49,12 @@ const  Routes = createBrowserRouter([
                 path: "/item/:id",
                 element: <DetailsPage></DetailsPage>,
                 loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
-            }
+            },
+            {
+                path: "/items/:id",
+                element: <CategoryItems></CategoryItems>,
+                loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+            },
         ]        
     }
 ]);
