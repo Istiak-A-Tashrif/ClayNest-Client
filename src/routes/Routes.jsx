@@ -3,6 +3,7 @@ import App from "../App";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 
 const  Routes = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const  Routes = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/profile",
+                element: <UpdateProfile></UpdateProfile>
             }
         ]
     }

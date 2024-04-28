@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
+import useAuth from "../Hooks/useAuth";
 
 const Navbar = () => {
+  const { user, userSignOut } = useAuth() 
+  
   const navLink = (
     <>
       <li>
@@ -14,9 +17,9 @@ const Navbar = () => {
       <li>
         <Link to={"/add"}>Add Items</Link>
       </li>
-      <li>
+      { user ? <span></span> : <li>
         <Link to={"/register"}>Register</Link>
-      </li>
+      </li>}
     </>
   );
 
@@ -77,7 +80,38 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to={"/login"}><button className="btn mr-2">Login</button></Link>
+      {user ? (
+          <details className="dropdown">
+            <summary className="btn btn-ghost" title={user?.displayName}>
+              <div className="avatar">
+                <div className="w-9 rounded-full">
+                  <img
+                    src={
+                      user?.photoURL ||
+                      "https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0="
+                    }
+                  />
+                </div>
+              </div>
+            </summary>
+            <ul className="p-2 shadow menu dropdown-content z-[2] bg-gray-100 rounded-lg">
+              <li>
+                <Link to={"/profile"} className="p-0">
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <button className="p-0" onClick={userSignOut}>
+                  log out
+                </button>
+              </li>
+            </ul>
+          </details>
+        ) : (
+          <button className="btn">
+            <Link to={"/login"}>Login</Link>
+          </button>
+        )}
 
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
