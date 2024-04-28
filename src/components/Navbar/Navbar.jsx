@@ -77,7 +77,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn mr-2">Button</a>
+        <Link to={"/login"}><button className="btn mr-2">Login</button></Link>
 
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
