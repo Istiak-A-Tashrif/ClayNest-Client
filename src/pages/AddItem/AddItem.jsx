@@ -4,8 +4,14 @@ import useAuth from "../../components/Hooks/useAuth";
 const AddItem = () => {
   const [customizable, setCustomizable] = useState("no");
   const [stock, setStock] = useState("in stock");
+  const [rating, setRating] = useState(4);
+  const [processingTime, setProcessingTime] = useState('1 week');
+  const [category, setCategory] = useState('Clay-made pottery');
+
+
 
   const {user} = useAuth();
+  console.log(user);
 
   const handleStock = (value) => {
     setStock(value)
@@ -14,6 +20,31 @@ const AddItem = () => {
   const handleRadioChange = (value) => {
     setCustomizable(value);
   };
+  const handleRatingChange = (event) => {
+    setRating(event.target.value);
+  };
+
+  const handleProcessingTimeChange = (event) => {
+    setProcessingTime(event.target.value);
+  };
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.userName.value;
+    const email = form.email.value;
+    const itemName = form.itemName.value;
+    const photo = form.photo.value;
+    const desc = form.desc.value;
+    const price = form.price.value;
+
+    
+
+
+  }
   return (
     <div className="p-4 mb-8 md:px-24 md:pb-32 md:pt-20 min-h-[55vh]">
 
@@ -22,24 +53,27 @@ const AddItem = () => {
     <p>Add Craft Item: Expand Your Collection with Handcrafted Artisanal Pieces of Elegance and Charm"</p>
 </div>
 
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="md:flex">
-          <label htmlFor="itemName" className="w-1/2 mr-4">
+          <label htmlFor="userName" className="w-1/2 mr-4">
             <span className="mb-2 block">User Name</span>
             <input
               type="text"
+              name="userName"
               defaultValue={user?.displayName || "User Name"}
               placeholder="User Name"
               className="input input-bordered w-full "
             />
           </label>
-          <label htmlFor="photo" className="w-1/2">
+          <label htmlFor="email" className="w-1/2">
             <span className="mb-2 block">User Email</span>
             <input
-              type="text"
+              type="email"
+              name="email"
               defaultValue={user?.email || "User Email"}
               placeholder="User Email"
               className="input input-bordered w-full"
+              required
             />
           </label>
         </div>
@@ -48,6 +82,7 @@ const AddItem = () => {
             <span className="mb-2 block">Item Name</span>
             <input
               type="text"
+              name="itemName"
               placeholder="Item Name"
               className="input input-bordered w-full "
             />
@@ -56,50 +91,62 @@ const AddItem = () => {
             <span className="mb-2 block">Craft Image</span>
             <input
               type="text"
+              name="photo"
               placeholder="Image URL"
               className="input input-bordered w-full"
             />
           </label>
         </div>
         <div className="md:flex">
-          <label htmlFor="itemName" className="w-1/2 mr-4">
+          <label htmlFor="desc" className="w-1/2 mr-4">
             <span className="mb-2 block">Description</span>
             <input
               type="text"
+              name="desc"
               placeholder="Short Description"
               className="input input-bordered w-full "
             />
           </label>
-          <label htmlFor="photo" className="w-1/2">
+          <label htmlFor="price
+          " className="w-1/2">
             <span className="mb-2 block">Price</span>
             <input
               type="text"
+              name="price"
               placeholder="$1000"
               className="input input-bordered w-full"
             />
           </label>
         </div>
         <div className="md:flex">
-          <label htmlFor="itemName" className="w-1/2 mr-4">
-            <span className="mb-2 block">Category</span>
-            <select className="select select-bordered w-full">
-              <option>Clay-made pottery</option>
-              <option>Stoneware</option>
-              <option>Porcelain</option>
-              <option>Terra Cotta</option>
-              <option>Ceramics & Architectural</option>
-              <option>Home decor pottery</option>
-            </select>
-          </label>
-          <label htmlFor="photo" className="w-1/2">
-            <span className="mb-2 block">Processing Time</span>
-            <select className="select select-bordered w-full">
-              <option>1 week</option>
-              <option>2 week</option>
-              <option>3 week</option>
-              <option>4 week</option>
-            </select>
-          </label>
+        <label htmlFor="category" className="w-1/2 mr-4">
+      <span className="mb-2 block">Category</span>
+      <select
+        className="select select-bordered w-full"
+        value={category}
+        onChange={handleCategoryChange}
+      >
+        <option value="Clay-made pottery">Clay-made pottery</option>
+        <option value="Stoneware">Stoneware</option>
+        <option value="Porcelain">Porcelain</option>
+        <option value="Terra Cotta">Terra Cotta</option>
+        <option value="Ceramics & Architectural">Ceramics & Architectural</option>
+        <option value="Home decor pottery">Home decor pottery</option>
+      </select>
+    </label>
+          <label htmlFor="time" className="w-1/2">
+      <span className="mb-2 block">Processing Time</span>
+      <select
+        className="select select-bordered w-full"
+        value={processingTime}
+        onChange={handleProcessingTimeChange}
+      >
+        <option value="1 week">1 week</option>
+        <option value="2 weeks">2 weeks</option>
+        <option value="3 weeks">3 weeks</option>
+        <option value="4 weeks">4 weeks</option>
+      </select>
+    </label>
         </div>
         <div className="md:flex">
           <div className="w-1/2 mr-8">
@@ -130,10 +177,10 @@ const AddItem = () => {
             </label>
           </div>
           </div>
-          <label htmlFor="itemName" className="w-1/2 mr-4 flex">
+          <label htmlFor="rrating" className="w-1/2 mr-4 flex">
             <div className="flex items-center">
               <span className="mr-2">Rating:</span>
-              <div className="rating">
+              <div className="rating" onChange={handleRatingChange}>
                 <input
                   type="radio"
                   name="rating-1"
@@ -157,6 +204,7 @@ const AddItem = () => {
                   name="rating-1"
                   value="4"
                   className="mask mask-star"
+                  defaultChecked
                 />
                 <input
                   type="radio"
@@ -197,7 +245,7 @@ const AddItem = () => {
           </div>
         </div>
         <div className="pt-8">
-            <button className="btn block w-1/2 mx-auto">Add Item</button>
+            <button type="submit" className="btn block w-1/2 mx-auto">Add Item</button>
           </div>
       </form>
     </div>
