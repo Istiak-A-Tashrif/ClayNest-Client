@@ -70,7 +70,7 @@ const Register = () => {
   };
 
   return (
-    <div className="p-10">
+    <div className="pt-10">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl  mx-auto bg-gray-900">
         <h1 className="text-2xl font-bold text-center text-gray-200">
           Register

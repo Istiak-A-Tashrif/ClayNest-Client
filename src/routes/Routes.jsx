@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import AddItem from "../pages/AddItem/AddItem";
 
 const  Routes = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const  Routes = createBrowserRouter([
                 element: <PrivateRoute>
                     <UpdateProfile></UpdateProfile>
                 </PrivateRoute>
+            },
+            {
+                path: "/add",
+                element: <AddItem></AddItem>
             }
         ]
     }
