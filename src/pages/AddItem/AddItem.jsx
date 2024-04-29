@@ -197,9 +197,9 @@ const AddItem = () => {
             </label>
           </div>
           </div>
-          <label htmlFor="rrating" className="w-1/2 mr-4 flex">
+          <label htmlFor="rating" className="w-1/2 mr-4 flex">
             <div className="flex items-center">
-              <span className="mr-2">Rating:</span>
+              <span className="mr-2 pl-1 md:pl-0">Rating:</span>
               <div className="rating" onChange={handleRatingChange}>
                 <input
                   type="radio"

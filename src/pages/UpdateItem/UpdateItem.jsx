@@ -210,31 +210,35 @@ const UpdateItem = () => {
                   name="rating-1"
                   value="1"
                   className="mask mask-star"
+                  checked={rating == '1'}
                 />
                 <input
                   type="radio"
                   name="rating-1"
                   value="2"
                   className="mask mask-star"
+                  checked={rating == '2'}
                 />
                 <input
                   type="radio"
                   name="rating-1"
                   value="3"
                   className="mask mask-star"
+                  checked={rating == '3'}
                 />
                 <input
                   type="radio"
                   name="rating-1"
                   value="4"
                   className="mask mask-star"
-                  defaultChecked
+                  checked={rating == '4'}
                 />
                 <input
                   type="radio"
                   name="rating-1"
                   value="5"
                   className="mask mask-star"
+                  checked={rating == '5'}
                 />
               </div>
             </div>
