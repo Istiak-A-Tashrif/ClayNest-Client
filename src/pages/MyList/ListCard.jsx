@@ -42,17 +42,13 @@ const ListCard = ({ item, list, setList }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{item?.itemName}</h2>
-        <p className="text-lg font-medium">
-          <span>Category: {item?.category}</span>
-        </p>
-        <p>{item?.desc}</p>
-        <div className="space-y-1 mt-3 font-semibold">
-          <p>Processing Time: {item?.processingTime}</p>
-          <p className="capitalize">Customizable: {item?.customizable}</p>
-        </div>
-        <div className="flex font-semibold">
+        <div className="flex font-medium text-lg">
           <p className="">Price: ${item?.price}</p>
           <p>Stock: {item?.stock}</p>
+        </div>
+        <div className="space-y-1 font-semibold">
+          <p>Processing Time: {item?.processingTime}</p>
+          <p className="capitalize">Customizable: {item?.customizable}</p>
         </div>
         <div className="flex font-semibold">
           <p className="flex items-center">

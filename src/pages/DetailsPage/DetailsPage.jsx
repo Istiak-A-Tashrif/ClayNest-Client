@@ -3,9 +3,8 @@ import { useLoaderData } from "react-router-dom";
 
 const DetailsPage = () => {
     const itemDetails = useLoaderData();
-    const { name, email, itemName, photo, desc, price, category, processingTime, customizable, rating, stock} = itemDetails
-
-    console.log(itemDetails);
+    const { name, email, itemName, photo, desc, price, category, processingTime, customizable, rating, stock} = itemDetails;
+    
   return (
     <section>
         <div className="dark:bg-gray-700">

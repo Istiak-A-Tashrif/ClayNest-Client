@@ -7,7 +7,7 @@ const AllItems = () => {
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 my-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 my-10">
         {items.map((item) => (
           <ItemCard key={item?._id} item={item}></ItemCard>
         ))}
