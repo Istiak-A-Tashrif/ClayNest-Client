@@ -71,7 +71,7 @@ const UpdateProfile = () => {
             </span>
           </div>
         </div>
-        <div className="w-1/2 mx-auto mt-4">
+        <div className="w-1/2 ml-4 md:mx-auto mt-4">
           <button
             className="btn md:ml-2 md:mt-0 mt-2 bg-[#B99470] border-none text-gray-100"
             onClick={() => document.getElementById("my_modal_1").showModal()}
