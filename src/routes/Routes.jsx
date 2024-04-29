@@ -22,7 +22,7 @@ const  Routes = createBrowserRouter([
             {
                 path: "/",
                 element:<Home></Home>,
-                loader: () => fetch("http://localhost:5000/")
+                loader: () => fetch("https://art-store-server-nine.vercel.app/")
             },
             {
                 path: "/login",
@@ -45,28 +45,28 @@ const  Routes = createBrowserRouter([
             {
                 path: "/allItems",
                 element: <AllItems></AllItems>,
-                loader: () => fetch('http://localhost:5000/allItems')
+                loader: () => fetch('https://art-store-server-nine.vercel.app/allItems')
             },
             {
                 path: "/item/:id",
                 element: <PrivateRoute><DetailsPage></DetailsPage></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+                loader: ({params}) => fetch(`https://art-store-server-nine.vercel.app/item/${params.id}`)
             },
             {
                 path: "/items/:id",
                 element: <CategoryItems></CategoryItems>,
-                loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+                loader: ({params}) => fetch(`https://art-store-server-nine.vercel.app/items/${params.id}`)
             },
             {
                 path: "/myList/:id",
                 element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/myList/${params.id}`)
+                loader: ({params}) => fetch(`https://art-store-server-nine.vercel.app/myList/${params.id}`)
 
             },
             {
                 path: "/update/:id",
                 element: <PrivateRoute><UpdateItem></UpdateItem></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+                loader: ({params}) => fetch(`https://art-store-server-nine.vercel.app/item/${params.id}`)
             }
         ]        
     }

@@ -45,7 +45,7 @@ const AddItem = () => {
 
     const item  = { name, email, itemName, photo, desc, price, category, processingTime, customizable, rating, stock}
 
-    fetch('http://localhost:5000/allItems', {
+    fetch('https://art-store-server-nine.vercel.app/allItems', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

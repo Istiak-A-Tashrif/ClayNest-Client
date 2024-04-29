@@ -45,7 +45,7 @@ const UpdateItem = () => {
 
     const item  = { name, email, itemName, photo, desc, price, category, processingTime, customizable, rating, stock}
 
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://art-store-server-nine.vercel.app/update/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'

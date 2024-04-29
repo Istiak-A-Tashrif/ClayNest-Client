@@ -31,10 +31,6 @@ const CategotyItemCard = ({ item }) => {
             <button className="btn btn-primary">View Details</button>
           </Link>
           </div>
-          <div className=""><a className="my-anchor-element">◕‿‿◕</a>
-<a className="my-anchor-element">◕‿‿◕</a>
-<a className="my-anchor-element">◕‿‿◕</a></div>
-
         </div>
       </div>
     );
