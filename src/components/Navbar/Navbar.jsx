@@ -14,9 +14,9 @@ const Navbar = ({item}) => {
       <li>
         <Link to={"/allItems"}>All Items</Link>
       </li>
-      <li>
+      { user ? <li>
         <Link to={"/add"}>Add Items</Link>
-      </li>
+      </li> : <span></span>}
       { user ? <li>
         <Link to={`/myList/${user?.email}`}>My Craft List</Link>
       </li> : <span></span>}

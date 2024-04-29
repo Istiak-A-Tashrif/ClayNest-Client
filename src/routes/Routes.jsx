@@ -40,7 +40,7 @@ const  Routes = createBrowserRouter([
             },
             {
                 path: "/add",
-                element: <AddItem></AddItem>
+                element: <PrivateRoute><AddItem></AddItem></PrivateRoute>
             },
             {
                 path: "/allItems",
@@ -49,7 +49,7 @@ const  Routes = createBrowserRouter([
             },
             {
                 path: "/item/:id",
-                element: <DetailsPage></DetailsPage>,
+                element: <PrivateRoute><DetailsPage></DetailsPage></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
             },
             {
@@ -59,13 +59,13 @@ const  Routes = createBrowserRouter([
             },
             {
                 path: "/myList/:id",
-                element: <MyList></MyList>,
+                element: <PrivateRoute><MyList></MyList></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/myList/${params.id}`)
 
             },
             {
                 path: "/update/:id",
-                element: <UpdateItem></UpdateItem>,
+                element: <PrivateRoute><UpdateItem></UpdateItem></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
             }
         ]        
