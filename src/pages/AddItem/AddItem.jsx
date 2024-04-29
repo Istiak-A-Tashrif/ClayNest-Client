@@ -13,7 +13,6 @@ const AddItem = () => {
 
 
   const {user} = useAuth();
-  console.log(user);
 
   const handleStock = (value) => {
     setStock(value)

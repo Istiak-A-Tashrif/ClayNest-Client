@@ -36,8 +36,6 @@ const UpdateItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.userName.value;
-    const email = form.email.value;
     const itemName = form.itemName.value;
     const photo = form.photo.value;
     const desc = form.desc.value;
