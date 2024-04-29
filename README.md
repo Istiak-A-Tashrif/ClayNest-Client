@@ -1,6 +1,6 @@
 ### Art & Craft Store Website - Ceramics and Pottery
 
-#### Live Site URL: [YourLiveSiteURL.com](#)
+#### Live Site URL: [https://claynest.netlify.app/](#)
 
 ---
 
@@ -69,11 +69,9 @@ f. Home decor pottery
 
 ### Repository Structure:
 1. **Client-Side Code**: GitHub Repository
-   - [Client-Side Repository Link](#)
-   - Minimum of 15 notable GitHub commits.
+   - [https://github.com/programming-hero-web-course-4/B9A10-client-side-Istiak-A-Tashrif](#)
 2. **Server-Side Code**: GitHub Repository
-   - [Server-Side Repository Link](#)
-   - Minimum of 8 notable GitHub commits.
+   - [https://github.com/programming-hero-web-course-4/b9a10-server-side-Istiak-A-Tashrif](#)
 3. **README.md**:
    - Detailed information about the website.
    - Setup instructions for local development.
@@ -94,5 +92,5 @@ f. Home decor pottery
 ---
 
 ### Note:
-- For any queries or assistance, feel free to contact [YourName] at [YourEmail].
+- For any queries or assistance, feel free to contact [IstiakAhmedTashrif] at [istiaktashrif@gmail.com].
 - Thank you for considering this submission. We look forward to your feedback!
