@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import useAuth from "../Hooks/useAuth";
 
-const Navbar = () => {
+const Navbar = ({item}) => {
   const { user, userSignOut } = useAuth() 
   
   const navLink = (
@@ -17,6 +17,9 @@ const Navbar = () => {
       <li>
         <Link to={"/add"}>Add Items</Link>
       </li>
+      { user ? <li>
+        <Link to={`/myList/${user?.email}`}>My Craft List</Link>
+      </li> : <span></span>}
       { user ? <span></span> : <li>
         <Link to={"/register"}>Register</Link>
       </li>}

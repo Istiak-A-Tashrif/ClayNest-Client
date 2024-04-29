@@ -1,18 +1,18 @@
 import { useState } from "react";
 import useAuth from "../../components/Hooks/useAuth";
 import Swal from "sweetalert2";
+import { useLoaderData, useParams } from "react-router-dom";
 
-const AddItem = () => {
-  const [customizable, setCustomizable] = useState("no");
-  const [stock, setStock] = useState("in stock");
-  const [rating, setRating] = useState(4);
-  const [processingTime, setProcessingTime] = useState('1 week');
-  const [category, setCategory] = useState('Clay-made pottery');
+const UpdateItem = () => {
+    const { name, email, itemName, photo, desc, price, category: proCategory, processingTime: proProcessingTime, customizable: proCustomizable, rating: proRating, stock: proStock, _id } = useLoaderData()
 
-
+    const [customizable, setCustomizable] = useState(proCustomizable);
+  const [stock, setStock] = useState(proStock);
+  const [rating, setRating] = useState(proRating);
+  const [processingTime, setProcessingTime] = useState(proProcessingTime);
+  const [category, setCategory] = useState(proCategory);
 
   const {user} = useAuth();
-  console.log(user);
 
   const handleStock = (value) => {
     setStock(value)
@@ -44,8 +44,8 @@ const AddItem = () => {
 
     const item  = { name, email, itemName, photo, desc, price, category, processingTime, customizable, rating, stock}
 
-    fetch('http://localhost:5000/allItems', {
-      method: 'POST',
+    fetch(`http://localhost:5000/update/${_id}`, {
+      method: 'PUT',
       headers: {
         'content-type': 'application/json'
       },
@@ -54,10 +54,10 @@ const AddItem = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      if(data.insertedId){
+      if(data.modifiedCount>0){
         Swal.fire({
           title: "Success!",
-          text: "Item added successfully",
+          text: "Item updated successfully",
           icon: "success"
         });
       }
@@ -69,8 +69,8 @@ const AddItem = () => {
     <div className="p-4 mb-8 md:px-24 md:pb-32 md:pt-20 min-h-[55vh]">
 
 <div className="text-center my-7">
-    <h1  className="text-3xl font-medium">Add Craft Item</h1>
-    <p>Add Craft Item: Expand Your Collection with Handcrafted Artisanal Pieces of Elegance and Charm"</p>
+    <h1  className="text-3xl font-medium">Update Craft Item</h1>
+    
 </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ const AddItem = () => {
             <input
               type="text"
               name="userName"
-              defaultValue={user?.displayName || "User Name"}
+              defaultValue={name}
               placeholder="User Name"
               className="input input-bordered w-full "
             />
@@ -90,7 +90,7 @@ const AddItem = () => {
             <input
               type="email"
               name="email"
-              defaultValue={user?.email}
+              defaultValue={email}
               placeholder="User Email"
               className="input input-bordered w-full"
               required
@@ -102,6 +102,7 @@ const AddItem = () => {
             <span className="mb-2 block">Item Name</span>
             <input
               type="text"
+              defaultValue={itemName}
               name="itemName"
               placeholder="Item Name"
               className="input input-bordered w-full "
@@ -111,6 +112,7 @@ const AddItem = () => {
             <span className="mb-2 block">Craft Image</span>
             <input
               type="text"
+              defaultValue={photo}
               name="photo"
               placeholder="Image URL"
               className="input input-bordered w-full"
@@ -122,6 +124,7 @@ const AddItem = () => {
             <span className="mb-2 block">Description</span>
             <input
               type="text"
+              defaultValue={desc}
               name="desc"
               placeholder="Short Description"
               className="input input-bordered w-full "
@@ -132,6 +135,7 @@ const AddItem = () => {
             <span className="mb-2 block">Price</span>
             <input
               type="text"
+              defaultValue={price}
               name="price"
               placeholder="$1000"
               className="input input-bordered w-full"
@@ -272,4 +276,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default UpdateItem;

@@ -10,6 +10,8 @@ import AddItem from "../pages/AddItem/AddItem";
 import AllItems from "../pages/AllItems/AllItems";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import CategoryItems from "../pages/CategoryItems/CategoryItems";
+import MyList from "../pages/MyList/MyList";
+import UpdateItem from "../pages/UpdateItem/UpdateItem";
 
 const  Routes = createBrowserRouter([
     {
@@ -55,6 +57,17 @@ const  Routes = createBrowserRouter([
                 element: <CategoryItems></CategoryItems>,
                 loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
             },
+            {
+                path: "/myList/:id",
+                element: <MyList></MyList>,
+                loader: ({params}) => fetch(`http://localhost:5000/myList/${params.id}`)
+
+            },
+            {
+                path: "/update/:id",
+                element: <UpdateItem></UpdateItem>,
+                loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+            }
         ]        
     }
 ]);
