@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form";
-import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaGoogle, FaGithub, FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../components/Hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
 
 const Login = () => {
+	const [showPass, setShowPass] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -93,14 +95,30 @@ const Login = () => {
               {errors.email && <span>This field is required</span>}
 			</div>
 			<div className="space-y-2">
-				<div className="flex justify-between">
-					<label htmlFor="password" className="text-sm">Password</label>
-					<a rel="noopener noreferrer" href="#" className="text-xs hover:underline text-gray-500">Forgot password?</a>
-				</div>
-				<input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" {...register("password", { required: true })}
+            <span className="text-sm">Password</span>
+            <label
+              htmlFor="password"
+              className="bg-white pr-4 flex items-center gap-2"
+            >
+              <input
+                type={showPass ? "text" : "password"}
+                name="password"
+                id="password"
+                placeholder="*****"
+                className="grow w-full px-3 py-2 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                {...register("password", { required: true })}
               />
-              {errors.password && <span>This field is required</span>}
-			</div>
+              <span onClick={() => setShowPass(!showPass)}>
+                {showPass ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </label>
+            {errors.password && (
+              <>
+                <span>This field is required</span>
+                <br />
+              </>
+            )}
+          </div>
 		</div>
 		<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign in</button>
 	</form>

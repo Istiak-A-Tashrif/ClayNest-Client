@@ -21,7 +21,7 @@ const MyList = () => {
   };
 
   return (
-    <div className="">
+    <div className="min-h-[69vh]">
       <Helmet>
         <title>ClayNest | My List</title>
       </Helmet>

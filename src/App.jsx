@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <>
+    <div className="container mx-auto">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
@@ -23,7 +23,7 @@ function App() {
         theme="colored"
         transition:Slide
       />
-    </>
+    </div>
   );
 }
 

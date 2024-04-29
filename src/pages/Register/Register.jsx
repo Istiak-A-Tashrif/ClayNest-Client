@@ -10,12 +10,15 @@ const Register = () => {
   const [showPass, setShowPass] = useState(false);
   const [passError, setPassError] = useState("");
 
-  const { createUser, 
-	update, 
-	notifyError,
-	googleSignIn,
-    githubSignIn, 
-} = useAuth();
+  const {
+    createUser,
+    update,
+    notifyError,
+    googleSignIn,
+    githubSignIn,
+    user,
+    setUser,
+  } = useAuth();
 
   const {
     register,
@@ -46,23 +49,25 @@ const Register = () => {
     } else if (!/^(?=.*[A-Z]).+$/.test(password)) {
       return setPassError("Password must have a Uppercase letter");
     }
-	setPassError("");
-    
-	createUser(email, password)
+    setPassError("");
+
+    createUser(email, password)
       .then(() => {
-		notify();
-        update(name, photo).then(() => {});
+        notify();
+        update(name, photo).then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+        });
       })
       .catch((error) => {
         console.error("error", error.message);
-		notifyError()
+        notifyError();
       });
   };
 
   const handleSocialLogin = (socialProvider) => {
     socialProvider()
       .then((res) => {
-        notify()
+        notify();
       })
       .catch((error) => {
         console.error(error.message);
@@ -147,7 +152,7 @@ const Register = () => {
             {<span>{passError}</span>}
           </div>
           <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600 ">
-            Sign in
+            Register
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
@@ -158,17 +163,29 @@ const Register = () => {
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm" onClick={() => handleSocialLogin(googleSignIn)}>
+          <button
+            aria-label="Log in with Google"
+            className="p-3 rounded-sm"
+            onClick={() => handleSocialLogin(googleSignIn)}
+          >
             <FaGoogle />
           </button>
-          <button aria-label="Log in with GitHub" className="p-3 rounded-sm" onClick={() => handleSocialLogin(githubSignIn)}>
+          <button
+            aria-label="Log in with GitHub"
+            className="p-3 rounded-sm"
+            onClick={() => handleSocialLogin(githubSignIn)}
+          >
             <FaGithub />
           </button>
         </div>
         <p className="text-xs text-center sm:px-6 text-gray-400">
           {" "}
           Have an account?
-          <a rel="noopener noreferrer" href="#" className="hover:underline ">
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="hover:underline text-gray-500"
+          >
             {" "}
             Log in
           </a>

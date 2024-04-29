@@ -1,7 +1,7 @@
 import React from "react";
 import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import { Tooltip } from 'react-tooltip'
 
 
 const CategotyItemCard = ({ item }) => {
@@ -19,13 +19,9 @@ const CategotyItemCard = ({ item }) => {
           <p>{item?.desc}</p>
           <div className="space-y-1 mt-3 font-semibold">
             <p>Processing Time: {item?.processingTime}</p>
-            <p className="capitalize">Customizable: {item?.customizable}</p>
           </div>
           <div className="flex font-semibold">
             <p className="">Price: ${item?.price}</p>
-            <p>Stock: {item?.stock}</p>
-          </div>
-          <div className="flex font-semibold">
             <p className="flex items-center">
               <span className="mr-1">Rating:</span> <CiStar /> {item?.rating}
             </p>
@@ -35,6 +31,10 @@ const CategotyItemCard = ({ item }) => {
             <button className="btn btn-primary">View Details</button>
           </Link>
           </div>
+          <div className=""><a className="my-anchor-element">◕‿‿◕</a>
+<a className="my-anchor-element">◕‿‿◕</a>
+<a className="my-anchor-element">◕‿‿◕</a></div>
+
         </div>
       </div>
     );

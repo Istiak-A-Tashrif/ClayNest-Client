@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer p-10 bg-neutral text-neutral-content items-center dark:bg-gray-800">
         <aside>
           <img src={Logo} alt="" className="h-20 -ml-4 -mb-2"/>
-          <p><span className="text-gray-700 dark:text-gray-200 text-lg">ClayNest Pvt. Ltd.</span
+          <p><span className="text-[#CCCCCC]  text-lg font-bold">ClayNest Pvt. Ltd.</span
           ><br/>
           <span>Providing reliable service since 2000</span>
           <br />

@@ -78,29 +78,7 @@ const UpdateItem = () => {
 </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
-      <div className="md:flex">
-          <label htmlFor="userName" className="w-1/2 mr-4">
-            <span className="mb-2 block">User Name</span>
-            <input
-              type="text"
-              name="userName"
-              defaultValue={name}
-              placeholder="User Name"
-              className="input input-bordered w-full "
-            />
-          </label>
-          <label htmlFor="email" className="w-1/2">
-            <span className="mb-2 block">User Email</span>
-            <input
-              type="email"
-              name="email"
-              defaultValue={email}
-              placeholder="User Email"
-              className="input input-bordered w-full"
-              required
-            />
-          </label>
-        </div>
+      
         <div className="md:flex">
           <label htmlFor="itemName" className="w-1/2 mr-4">
             <span className="mb-2 block">Item Name</span>
