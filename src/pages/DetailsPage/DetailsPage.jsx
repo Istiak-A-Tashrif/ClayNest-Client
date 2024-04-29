@@ -35,13 +35,13 @@ const DetailsPage = () => {
           className="w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40"
         />
 
-        <h3 className="px-4 pb- mx-auto text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg">
+        <h3 className="px-4 mx-auto text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg">
           Processing Time: {processingTime}
         </h3>
-        <h3 className="px-4 pb- mx-auto text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg capitalize">
+        <h3 className="px-4 mx-auto text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg capitalize">
           Customizable: {customizable}
         </h3>
-        <div className="rating w-full px-4 pb- items-center justify-center text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg"> <span className="mr-1">Rating:</span>
+        <div className="rating w-full px-4 items-center justify-center text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg"> <span className="mr-1">Rating:</span>
       {[1, 2, 3, 4, 5].map((value) => (
       <input
           key={value}
@@ -53,10 +53,10 @@ const DetailsPage = () => {
         />
       ))}
     </div>
-    <h3 className="px-4 pb- mx-auto text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg">
+    <h3 className="px-4 mx-auto text-center md:py-1 md:px-10 lg:px-32 font-semibold text-lg">
           Stock: {stock}
         </h3>
-    <h3 className="px-4 pb- mx-auto text-center md:py-1 md:px-10 lg:px-32 font-bold text-lg">
+    <h3 className="px-4 mx-auto text-center md:py-1 md:px-10 lg:px-32 font-bold text-lg">
           Author: {name}
         </h3>
 

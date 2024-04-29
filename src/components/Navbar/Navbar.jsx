@@ -82,7 +82,7 @@ const Navbar = ({item}) => {
           }
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end space-x-2">
       {user ? (
           <details className="dropdown">
             <summary className="btn btn-ghost" title={user?.displayName}>

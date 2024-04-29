@@ -277,7 +277,7 @@ const UpdateItem = () => {
           </div>
         </div>
         <div className="pt-8">
-            <button type="submit" className="btn block w-1/2 mx-auto">Add Item</button>
+            <button type="submit" className="btn block w-1/2 mx-auto">Update Item</button>
           </div>
       </form>
     </div>
