@@ -69,9 +69,9 @@ f. Home decor pottery
 
 ### Repository Structure:
 1. **Client-Side Code**: GitHub Repository
-   - [https://github.com/programming-hero-web-course-4/B9A10-client-side-Istiak-A-Tashrif](#)
+   - [Client-Side Repository Link](https://github.com/programming-hero-web-course-4/B9A10-client-side-Istiak-A-Tashrif)
 2. **Server-Side Code**: GitHub Repository
-   - [https://github.com/programming-hero-web-course-4/b9a10-server-side-Istiak-A-Tashrif](#)
+   - [https://github.com/programming-hero-web-course-4/b9a10-server-side-Istiak-A-Tashrif](https://github.com/programming-hero-web-course-4/b9a10-server-side-Istiak-A-Tashrif)
 3. **README.md**:
    - Detailed information about the website.
    - Setup instructions for local development.
@@ -92,5 +92,5 @@ f. Home decor pottery
 ---
 
 ### Note:
-- For any queries or assistance, feel free to contact [IstiakAhmedTashrif] at [istiaktashrif@gmail.com].
+- For any queries or assistance, feel free to contact [Istiak Ahmed Tashrif] at [istiaktashrif@gmail.com]].
 - Thank you for considering this submission. We look forward to your feedback!
