@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Slide, toast } from "react-toastify";
 import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
   const { user, setUser, update, notifyError } = useAuth();
@@ -46,6 +47,9 @@ const UpdateProfile = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ClayNest | Profile</title>
+      </Helmet>
       <div className="p-8 sm:flex justify-center flex-col min-h-[68vh]">
         <div className="flex-shrink-0 md:w-1/2 h-64 mb-6  mx-auto bg-gray-100 rounded">
           <img

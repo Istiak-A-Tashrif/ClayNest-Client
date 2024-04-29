@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../components/Hooks/useAuth";
 import { Bounce, Slide, ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -71,6 +72,9 @@ const Register = () => {
 
   return (
     <div className="pt-10">
+      <Helmet>
+        <title>ClayNest | Register</title>
+      </Helmet>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl  mx-auto bg-gray-900">
         <h1 className="text-2xl font-bold text-center text-gray-200">
           Register

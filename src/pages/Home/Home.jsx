@@ -5,6 +5,7 @@ import FAQ from "./FAQ";
 import Newsletter from "./Newsletter";
 import Lottie from "lottie-react";
 import pottery from "../../assets/eco.json"
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
@@ -12,6 +13,9 @@ const Home = () => {
 
   return (
   <>
+  <Helmet>
+    <title>ClayNest | Home</title>
+  </Helmet>
   <Banner></Banner>
  <div className="flex justify-around items-center my-12">
   <div className="w-1/2 space-y-2">

@@ -2,6 +2,7 @@ import React from 'react';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import { useLoaderData } from 'react-router-dom';
 import CategotyItemCard from './CategotyItemCard';
+import { Helmet } from 'react-helmet-async';
 
 const CategoryItems = () => {
 
@@ -12,6 +13,9 @@ const CategoryItems = () => {
             {
                 categoryBasedItems.map(item => <CategotyItemCard key={item?._id} item={item}></CategotyItemCard>)
             }
+            <Helmet>
+                <title>ClayNest | Items</title>
+            </Helmet>
         </div>
     );
 };

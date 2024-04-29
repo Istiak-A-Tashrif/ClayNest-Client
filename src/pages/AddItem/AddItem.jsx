@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAuth from "../../components/Hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddItem = () => {
   const [customizable, setCustomizable] = useState("no");
@@ -67,7 +68,9 @@ const AddItem = () => {
   }
   return (
     <div className="p-4 mb-8 md:px-24 md:pb-32 md:pt-20 min-h-[55vh]">
-
+      <Helmet>
+      <title>ClayNest | Add Items</title>
+    </Helmet>
 <div className="text-center my-7">
     <h1  className="text-3xl font-medium">Add Craft Item</h1>
     <p>Add Craft Item: Expand Your Collection with Handcrafted Artisanal Pieces of Elegance and Charm"</p>

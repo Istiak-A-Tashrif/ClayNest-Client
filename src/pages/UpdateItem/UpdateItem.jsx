@@ -2,6 +2,7 @@ import { useState } from "react";
 import useAuth from "../../components/Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useLoaderData, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UpdateItem = () => {
     const { name, email, itemName, photo, desc, price, category: proCategory, processingTime: proProcessingTime, customizable: proCustomizable, rating: proRating, stock: proStock, _id } = useLoaderData()
@@ -67,6 +68,9 @@ const UpdateItem = () => {
   }
   return (
     <div className="p-4 mb-8 md:px-24 md:pb-32 md:pt-20 min-h-[55vh]">
+      <Helmet>
+        <title>ClayNest | Update</title>
+      </Helmet>
 
 <div className="text-center my-7">
     <h1  className="text-3xl font-medium">Update Craft Item</h1>

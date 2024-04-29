@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import ListCard from "./ListCard";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const MyList = () => {
   const myCraftList = useLoaderData();
@@ -21,6 +22,9 @@ const MyList = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>ClayNest | My List</title>
+      </Helmet>
       <div className="flex justify-center">
         <div className="dropdown mt-4">
           <div tabIndex={0} role="button" className="btn m-1">

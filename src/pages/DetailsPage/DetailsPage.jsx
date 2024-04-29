@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const DetailsPage = () => {
@@ -7,6 +8,9 @@ const DetailsPage = () => {
     
   return (
     <section>
+      <Helmet>
+        <title>ClayNest | Item Details</title>
+      </Helmet>
         <div className="dark:bg-gray-700">
           <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-50">
             <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-gray-50">

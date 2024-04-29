@@ -3,6 +3,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import useAuth from "../../components/Hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 	const {
@@ -54,6 +55,9 @@ const Login = () => {
 
   return (
     <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-900 mx-auto my-6">
+		<Helmet>
+			<title>ClayNest | Log In</title>
+		</Helmet>
 	<h2 className="mb-3 text-3xl font-semibold text-center text-gray-200">Login to your account</h2>
 	<p className="text-sm text-center text-gray-400 ">Dont have account?
 	<Link
