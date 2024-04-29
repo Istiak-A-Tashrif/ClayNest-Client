@@ -27,13 +27,13 @@ const Navbar = ({item}) => {
     </>
   );
 
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const handleTheme = (e) => {
     if (e.target.checked) {
-      setTheme("light");
-    } else {
       setTheme("dark");
+    } else {
+      setTheme("light");
     }
   };
 
