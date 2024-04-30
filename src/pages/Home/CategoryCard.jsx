@@ -5,24 +5,20 @@ const CategoryCard = ({data}) => {
     const {image, category, des, _id} = data;
 
   return (
-    <div className="card card-side bg-base-100 shadow-xl my-4 flex-col md:flex-row">
-      <div className="w-full md:w-1/3">
-      <figure>
-        <img
-          src={image}
-          alt="Movie"
-          className="w-full"
-        />
-      </figure>
-      </div>
-      <div className="card-body  w-full md:w-2/3">
-        <h2 className="card-title">{category}</h2>
-        <p>{des}</p>
-        <div className="card-actions mt-2">
-          <Link to={`/items/${_id}`}><button className="btn btn-primary">View Products</button></Link>
-        </div>
+    <div className="card max-w-96 bg-base-100 shadow-xl mb-12 mx-auto">
+    <figure>
+      <img src={image} alt="Shoes" className="w-full h-96" />
+    </figure>
+    <div className="card-body">
+      <h2 className="card-title">{category}</h2>
+      <p>{des}</p>
+      <div className="card-actions justify-between mt-4">
+        <Link to={`/items/${_id}`}>
+          <button className="btn btn-primary">View Products</button>
+        </Link>
       </div>
     </div>
+  </div>
   );
 };
 

@@ -27,7 +27,7 @@ const Newsletter = () => {
                 />
                 <button
                   type=""
-                  className="w-full px-6 py-4 mt-5 text-white text-lg bg-gray-900 rounded-md sm:mt-0 sm:w-auto whitespace-nowrap dark:bg-gray-900"
+                  className="w-full px-6 py-4 mt-5 text-white text-lg bg-gray-900 rounded-md sm:mt-0 sm:w-auto whitespace-nowrap"
                 >
                   {" "}
                   Subscribe{" "}
