@@ -61,7 +61,7 @@ const Login = () => {
 			<title>ClayNest | Log In</title>
 		</Helmet>
 	<h2 className="mb-3 text-3xl font-semibold text-center text-gray-200">Login to your account</h2>
-	<p className="text-sm text-center text-gray-400 ">Dont have account?
+	<p className="text-sm text-center text-gray-400 ">Don't have account?
 	<Link
             to={"/register"}
             rel="noopener noreferrer"
