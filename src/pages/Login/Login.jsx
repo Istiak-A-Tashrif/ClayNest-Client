@@ -89,16 +89,16 @@ const Login = () => {
 	<form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
 		<div className="space-y-4">
 			<div className="space-y-2">
-				<label htmlFor="email" className="block text-sm">Email address</label>
+				<label htmlFor="email" className="block text-sm text-gray-400">Email address</label>
 				<input type="email" name="email" id="email" placeholder="istiak@ahmed.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" {...register("email", { required: true })}
               />
               {errors.email && <span>This field is required</span>}
 			</div>
 			<div className="space-y-2">
-            <span className="text-sm">Password</span>
+            <span className="text-sm text-gray-400">Password</span>
             <label
               htmlFor="password"
-              className="bg-white pr-4 flex items-center gap-2"
+              className="bg-white pr-4 flex items-center gap-2 rounded-md"
             >
               <input
                 type={showPass ? "text" : "password"}
@@ -120,7 +120,7 @@ const Login = () => {
             )}
           </div>
 		</div>
-		<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign in</button>
+		<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Log in</button>
 	</form>
 </div>
   );

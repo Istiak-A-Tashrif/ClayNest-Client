@@ -76,7 +76,7 @@ const Register = () => {
   };
 
   return (
-    <div className="pt-10">
+    <div className="my-10">
       <Helmet>
         <title>ClayNest | Register</title>
       </Helmet>
@@ -125,18 +125,18 @@ const Register = () => {
             />
             {errors.email && <span>This field is required</span>}
           </div>
-          <div className="space-y-2">
-            <span className="text-sm">Password</span>
+          <div className="space-y-1 pb-2">
+            <span className="text-sm text-gray-400">Password</span>
             <label
               htmlFor="password"
-              className="bg-white pr-4 flex items-center gap-2"
+              className="bg-white pr-4 flex items-center gap-2 rounded-md"
             >
               <input
                 type={showPass ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="*****"
-                className="grow w-full px-3 py-2 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="grow w-full px-3 py-2 rounded-l-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                 {...register("password", { required: true })}
               />
               <span onClick={() => setShowPass(!showPass)}>
@@ -162,7 +162,7 @@ const Register = () => {
           </p>
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
         </div>
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-4 text-gray-200">
           <button
             aria-label="Log in with Google"
             className="p-3 rounded-sm"
