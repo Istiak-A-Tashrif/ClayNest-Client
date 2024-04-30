@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import useAuth from "../Hooks/useAuth";
 import { Tooltip } from "react-tooltip";
+import useThemeDetector from "../Hooks/useThemeDetector";
 
 const Navbar = ({ item }) => {
   const { user, userSignOut } = useAuth();
@@ -39,21 +40,25 @@ const Navbar = ({ item }) => {
     </>
   );
 
-  const [theme, setTheme] = useState("light");
-
-  const handleTheme = (e) => {
-    if (e.target.checked) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+  const [theme, setTheme] = useState("");
+  const isDarkTheme = useThemeDetector();
+  useEffect(() => {
+    isDarkTheme ? setTheme("dark") : setTheme("light")
+  }, [isDarkTheme]);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
+
+  const handleTheme = (e) => {
+    if (theme === "dark") {
+     return setTheme("light")
+    }
+    return setTheme("dark")
+  };
+
   return (
     <div className="navbar bg-base-100 mb-2">
       <div className="navbar-start">
