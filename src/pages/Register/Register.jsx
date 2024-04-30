@@ -123,7 +123,7 @@ const Register = () => {
               className="w-full px-4 py-3 rounded-md bg-white text-[#252933] outline-none"
               {...register("email", { required: true })}
             />
-            {errors.email && <span>This field is required</span>}
+            {errors.email && <span className="text-orange-500">This field is required</span>}
           </div>
           <div className="text-sm space-y-1 pb-2">
             <span className="text-gray-400">Password</span>
@@ -145,11 +145,11 @@ const Register = () => {
             </label>
             {errors.password && (
               <>
-                <span>This field is required</span>
+                <span className="text-orange-500">This field is required</span>
                 <br />
               </>
             )}
-            {<span>{passError}</span>}
+            {<span className="text-orange-500">{passError}</span>}
           </div>
           <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600 ">
             Register

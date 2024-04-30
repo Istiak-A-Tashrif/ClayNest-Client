@@ -92,7 +92,7 @@ const Login = () => {
 				<label htmlFor="email" className="block text-sm text-gray-400">Email address</label>
 				<input type="email" name="email" id="email" placeholder="istiak@ahmed.com" className="w-full px-3 py-2 border rounded-md bg-white text-[#252933]" {...register("email", { required: true })}
               />
-              {errors.email && <span>This field is required</span>}
+              {errors.email && <span className="text-orange-500 text-sm">This field is required</span>}
 			</div>
 			<div className="space-y-2">
             <span className="text-sm text-gray-400">Password</span>
@@ -114,7 +114,7 @@ const Login = () => {
             </label>
             {errors.password && (
               <>
-                <span>This field is required</span>
+                <span className="text-orange-500   text-sm">This field is required</span>
                 <br />
               </>
             )}
