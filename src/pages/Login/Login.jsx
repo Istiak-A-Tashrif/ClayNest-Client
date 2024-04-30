@@ -56,7 +56,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-900 mx-auto my-6 md:mb-10">
+    <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-900 mx-auto my-6 md:mb-10 ">
 		<Helmet>
 			<title>ClayNest | Log In</title>
 		</Helmet>
@@ -83,14 +83,14 @@ const Login = () => {
 	</div>
 	<div className="flex items-center w-full my-4">
 		<hr  className="w-full text-gray-600" />
-		<p className="px-3 text-gray-600">OR</p>
-		<hr  className="w-full dark:text-gray-600" />
+		<p className="px-3 text-gray-400">OR</p>
+		<hr  className="w-full text-gray-600" />
 	</div>
 	<form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
 		<div className="space-y-4">
 			<div className="space-y-2">
 				<label htmlFor="email" className="block text-sm text-gray-400">Email address</label>
-				<input type="email" name="email" id="email" placeholder="istiak@ahmed.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" {...register("email", { required: true })}
+				<input type="email" name="email" id="email" placeholder="istiak@ahmed.com" className="w-full px-3 py-2 border rounded-md bg-white text-[#252933]" {...register("email", { required: true })}
               />
               {errors.email && <span>This field is required</span>}
 			</div>
@@ -98,14 +98,14 @@ const Login = () => {
             <span className="text-sm text-gray-400">Password</span>
             <label
               htmlFor="password"
-              className="bg-white pr-4 flex items-center gap-2 rounded-md"
+              className="bg-white pr-4 flex items-center gap-2 outline-none rounded-md"
             >
               <input
                 type={showPass ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="*****"
-                className="grow w-full px-3 py-2 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="grow w-full px-3 py-2 rounded-l-md outline-none bg-white text-[#252933]"
                 {...register("password", { required: true })}
               />
               <span onClick={() => setShowPass(!showPass)}>
@@ -120,7 +120,7 @@ const Login = () => {
             )}
           </div>
 		</div>
-		<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Log in</button>
+		<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-600 text-gray-50">Log in</button>
 	</form>
 </div>
   );

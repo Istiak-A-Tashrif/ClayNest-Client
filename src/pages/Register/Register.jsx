@@ -94,7 +94,7 @@ const Register = () => {
               name="name"
               id="name"
               placeholder="Istiak Ahmed"
-              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              className="w-full px-4 py-3 rounded-md bg-white text-[#252933]  outline-none"
               {...register("name")}
             />
           </div>
@@ -107,7 +107,7 @@ const Register = () => {
               name="photo"
               id="photo"
               placeholder="Photo URL"
-              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              className="w-full px-4 py-3 rounded-md bg-white text-[#252933]  outline-none"
               {...register("photo")}
             />
           </div>
@@ -120,13 +120,13 @@ const Register = () => {
               name="email"
               id="email"
               placeholder="istiak@ahmed.com"
-              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              className="w-full px-4 py-3 rounded-md bg-white text-[#252933] outline-none"
               {...register("email", { required: true })}
             />
             {errors.email && <span>This field is required</span>}
           </div>
-          <div className="space-y-1 pb-2">
-            <span className="text-sm text-gray-400">Password</span>
+          <div className="text-sm space-y-1 pb-2">
+            <span className="text-gray-400">Password</span>
             <label
               htmlFor="password"
               className="bg-white pr-4 flex items-center gap-2 rounded-md"
@@ -136,7 +136,7 @@ const Register = () => {
                 name="password"
                 id="password"
                 placeholder="*****"
-                className="grow w-full px-3 py-2 rounded-l-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="grow w-full px-3 py-3 rounded-l-md bg-white text-[#252933] outline-none"
                 {...register("password", { required: true })}
               />
               <span onClick={() => setShowPass(!showPass)}>
@@ -151,18 +151,18 @@ const Register = () => {
             )}
             {<span>{passError}</span>}
           </div>
-          <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600 ">
+          <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600 ">
             Register
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
-          <p className="px-3 text-sm text-gray-400">
+          <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
+          <p className="px-3 text-sm text-gray-200">
             Register with social accounts
           </p>
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+          <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
         </div>
-        <div className="flex justify-center space-x-4 text-gray-200">
+        <div className="flex justify-center space-x-4 text-gray-500">
           <button
             aria-label="Log in with Google"
             className="p-3 rounded-sm"
