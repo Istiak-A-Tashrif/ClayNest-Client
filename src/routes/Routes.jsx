@@ -65,8 +65,7 @@ const  Routes = createBrowserRouter([
             },
             {
                 path: "/update/:id",
-                element: <PrivateRoute><UpdateItem></UpdateItem></PrivateRoute>,
-                loader: ({params}) => fetch(`https://art-store-server-nine.vercel.app/item/${params.id}`)
+                element: <PrivateRoute><UpdateItem></UpdateItem></PrivateRoute>
             }
         ]        
     }

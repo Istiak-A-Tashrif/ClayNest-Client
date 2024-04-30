@@ -1,11 +1,23 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import ListCard from "./ListCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { data } from "autoprefixer";
 
 const MyList = () => {
-  const myCraftList = useLoaderData();
-  const [list, setList] = useState(myCraftList);
+  const [myCraftList, setMyCraftList] = useState([]);
+  const [list, setList] = useState([]);
+
+  const {id} = useParams();
+
+  useEffect(() => {
+    fetch(`https://art-store-server-nine.vercel.app/myList/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      setList(data);
+      setMyCraftList(data);
+    })
+  },[])
 
   const handleCustomizable = () => {
     const Customizableitem = myCraftList.filter((item) => item.customizable === "yes");
@@ -51,7 +63,8 @@ const MyList = () => {
           <ListCard
             key={item._id}
             item={item}
-            list={list}
+            myCraftList = {myCraftList}
+            setMyCraftList={setMyCraftList}
             setList={setList}
           ></ListCard>
         ))}

@@ -3,7 +3,7 @@ import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const ListCard = ({ item, list, setList }) => {
+const ListCard = ({ item, myCraftList, setList, setMyCraftList }) => {
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -27,9 +27,10 @@ const ListCard = ({ item, list, setList }) => {
                 icon: "success",
               });
 
-              const remainingItem = list.filter((aItem) => aItem._id != id);
+              const remainingItem = myCraftList.filter((aItem) => aItem._id != id);
 
-              setList(remainingItem)
+              setList(remainingItem);
+              setMyCraftList(remainingItem);
             }
           });
       }
