@@ -76,7 +76,7 @@ const Register = () => {
   };
 
   return (
-    <div className="my-10">
+    <div className="my-6 md:mb-10">
       <Helmet>
         <title>ClayNest | Register</title>
       </Helmet>
