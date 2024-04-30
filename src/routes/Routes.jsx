@@ -12,6 +12,7 @@ import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import CategoryItems from "../pages/CategoryItems/CategoryItems";
 import MyList from "../pages/MyList/MyList";
 import UpdateItem from "../pages/UpdateItem/UpdateItem";
+import AllItemsTable from "../pages/AllItemsTable/AllItemsTable";
 
 const  Routes = createBrowserRouter([
     {
@@ -66,6 +67,12 @@ const  Routes = createBrowserRouter([
                 path: "/update/:id",
                 element: <PrivateRoute><UpdateItem></UpdateItem></PrivateRoute>,
                 loader: ({params}) => fetch(`https://art-store-server-nine.vercel.app/item/${params.id}`)
+            },
+            {
+                path: "/itemsTable",
+                element: <AllItemsTable></AllItemsTable>,
+                loader: () => fetch('https://art-store-server-nine.vercel.app/allItems')
+
             }
         ]        
     }
