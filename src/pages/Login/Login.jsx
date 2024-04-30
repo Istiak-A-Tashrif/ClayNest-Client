@@ -56,7 +56,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-900 mx-auto my-6 md:mb-10 ">
+    <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-900 mx-auto my-6 md:mb-10 min-h-[64vh]">
 		<Helmet>
 			<title>ClayNest | Log In</title>
 		</Helmet>
