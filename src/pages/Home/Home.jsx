@@ -32,13 +32,13 @@ const Home = () => {
     <title>ClayNest | Home</title>
   </Helmet>
   <Banner></Banner>
- <div className="flex justify-around items-center my-20">
+ <div className="flex justify-between items-center my-20">
   <div className="w-1/2 space-y-2">
     <h1 className="text-3xl font-semibold">Eco-Friendly Essentials</h1>
     <p>Discover eco-friendly solutions for everyday living. Our curated collection offers sustainable alternatives for a greener lifestyle without sacrificing convenience or quality. Start making a positive impact today!</p>
   </div>
-  <div className="">
-  <Lottie animationData={pottery} loop={true} className="h-36"/>
+  <div className="pr-16">
+  <Lottie animationData={pottery} loop={true} className="h-36 mx-auto"/>
   </div>
  </div>
 
