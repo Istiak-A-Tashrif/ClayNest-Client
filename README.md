@@ -1,6 +1,6 @@
-# Art & Craft Store Website - Ceramics and Pottery
+## Art & Craft Store Website - Ceramics and Pottery
 
-### Live Site URL: [https://claynest.netlify.app/](#)
+#### Live Site URL: [https://claynest.netlify.app/](#)
 
 ---
 
@@ -92,8 +92,8 @@ f. Home decor pottery
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/programming-hero-web-course1/b9a12-client-side-Istiak-A-Tashrif.git
-cd scholarquest
+git clone https://github.com/Istiak-A-Tashrif/ClayNest-Client.git
+cd claynest
 ```
 
 2. Install the dependencies:
