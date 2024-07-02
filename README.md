@@ -1,10 +1,10 @@
-### Art & Craft Store Website - Ceramics and Pottery
+# Art & Craft Store Website - Ceramics and Pottery
 
-#### Live Site URL: [https://claynest.netlify.app/](#)
+### Live Site URL: [https://claynest.netlify.app/](#)
 
 ---
 
-### Features:
+## Features:
 1. **Unique Craft Category**: Exclusive collection of Ceramics and Pottery.
 2. **Responsive Design**: Seamlessly adapts to various devices - mobile, tablet, and desktop.
 3. **User Authentication**: Secure login and registration with email, password, and social media options.
@@ -26,7 +26,7 @@
 
 ---
 
-### Technologies Used:
+## Technologies Used:
 - **Frontend**:
   - React
   - React Router DOM
@@ -57,7 +57,7 @@
   
 ---
 
-### Selected Subcategories:
+## Selected Subcategories:
 a. Clay-made pottery
 b. Stoneware
 c. Porcelain
@@ -67,7 +67,7 @@ f. Home decor pottery
 
 ---
 
-### Repository Structure:
+## Repository Structure:
 1. **Client-Side Code**: GitHub Repository
    - [Client-Side Repository Link](https://github.com/programming-hero-web-course-4/B9A10-client-side-Istiak-A-Tashrif)
 2. **Server-Side Code**: GitHub Repository
@@ -80,17 +80,39 @@ f. Home decor pottery
 
 ---
 
-### Instructions:
-1. Clone the client-side and server-side repositories.
-2. Set up environment variables for Firebase config keys, MongoDB credentials, and other backend configurations.
-3. Install dependencies for both frontend and backend.
-4. Run the backend server and connect to the MongoDB database.
-5. Run the frontend application locally for testing and development.
-6. Ensure adherence to all assignment requirements and implement additional features as desired.
-7. Deploy the application and provide the live site URL for evaluation.
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- MongoDB
+- Firebase account
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/programming-hero-web-course1/b9a12-client-side-Istiak-A-Tashrif.git
+cd scholarquest
+```
+
+2. Install the dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables:
+- Create a `.env` file in the root directory
+- Add your Firebase config keys and MongoDB credentials
+
+4. Run the application:
+```bash
+npm start
+```
+
 
 ---
 
-### Note:
+## Note:
 - For any queries or assistance, feel free to contact Istiak Ahmed Tashrif at [istiaktashrif@gmail.com].
 - Thank you for considering this submission. We look forward to your feedback!

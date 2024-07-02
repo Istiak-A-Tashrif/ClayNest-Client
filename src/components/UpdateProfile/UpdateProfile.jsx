@@ -8,8 +8,6 @@ import { Helmet } from "react-helmet-async";
 const UpdateProfile = () => {
   const { user, setUser, update, notifyError } = useAuth();
 
-  console.log(user);
-
   const {
     register,
     handleSubmit,
